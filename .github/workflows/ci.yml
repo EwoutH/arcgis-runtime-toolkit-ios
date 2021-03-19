@@ -11,5 +11,4 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - run: brew install swiftlint
     - uses: sersoft-gmbh/xcodebuild-action@v1
