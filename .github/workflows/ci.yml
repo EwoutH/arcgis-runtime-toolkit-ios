@@ -1,0 +1,14 @@
+name: Build app
+
+on:
+  push:
+  pull_request:
+  schedule:
+  - cron: '0 6 * * 1' # Run every Monday at 06:00 (UTC)
+  
+jobs:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: brew install swiftlint
+    - uses: xcodebuild
