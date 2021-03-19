@@ -9,6 +9,12 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        workspace: ['Examples','Toolkit']
+        
     steps:
     - uses: actions/checkout@v2
     - uses: sersoft-gmbh/xcodebuild-action@v1
+      with:
+        workspace: ${{ matrix.workspace }}
