@@ -7,8 +7,9 @@ on:
   - cron: '0 6 * * 1' # Run every Monday at 06:00 (UTC)
   
 jobs:
+  build:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - run: brew install swiftlint
-    - uses: xcodebuild
+    - uses: sersoft-gmbh/xcodebuild-action@v1
